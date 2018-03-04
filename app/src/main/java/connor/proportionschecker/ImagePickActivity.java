@@ -24,12 +24,13 @@ public class ImagePickActivity extends AppCompatActivity {
                 startActivity(cameraIntent);
             }
         });
-
+        /*
         final Button quitButton = findViewById(R.id.quit_button);
         quitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 finish();
             }
         });
+        */
     }
 }
