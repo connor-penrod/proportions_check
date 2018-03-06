@@ -28,7 +28,7 @@ public class ImagePickActivity extends AppCompatActivity {
         final Button quitButton = findViewById(R.id.quit_button);
         quitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                finish();
+                f90inish();
             }
         });
         */
