@@ -33,7 +33,16 @@ public class FlippedCameraActivity extends AppCompatActivity implements TextureV
 
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i1) {
-        camera = Camera.open();
+        try {
+            resetCamera();
+            camera = Camera.open();
+        }
+        catch (Exception e)
+        {
+            Log.e("Checker", "Failed to open camera.");
+            e.printStackTrace();
+        }
+
         if (isPreviewRunning) {
             camera.stopPreview();
         }
@@ -61,6 +70,12 @@ public class FlippedCameraActivity extends AppCompatActivity implements TextureV
             isPreviewRunning = true;
         } catch(Exception e) {
             Log.d("PreviewError", "Cannot start preview", e);
+        }
+    }
+    private void resetCamera() {
+        if (camera != null) {
+            camera.release();
+            camera = null;
         }
     }
 
